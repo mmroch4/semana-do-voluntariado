@@ -6,10 +6,12 @@ import { Hero } from "@/components/ui/Hero";
 import { Split } from "@/components/ui/Split";
 import { VideoPoster } from "@/components/ui/VideoPoster";
 import { PartnerRow } from "@/components/ui/PartnerRow";
-import { CtaSection } from "@/components/ui/CtaSection";
+import { ShareSection } from "@/components/ui/ShareSection";
 import { Notice } from "@/components/ui/Notice";
 import { getDictionary } from "@/lib/content/dictionaries";
 import { images } from "@/lib/content/images";
+import { routes } from "@/lib/i18n/routes";
+import { SITE_URL } from "@/lib/site";
 import type { Locale } from "@/lib/i18n/config";
 
 export function OrganizationPage({ locale }: { locale: Locale }) {
@@ -67,14 +69,10 @@ export function OrganizationPage({ locale }: { locale: Locale }) {
       </Section>
 
       {/* #VoluntariadoUPorto */}
-      <CtaSection
-        eyebrow={t.social.eyebrow}
-        title={t.social.title}
+      <ShareSection
+        content={t.social}
         titleId="social-title"
-        body={t.social.body}
-        button={t.social.cta}
-        href="#"
-        notice={t.social.notice}
+        url={new URL(routes[locale].organization, SITE_URL).toString()}
       />
     </SiteFrame>
   );

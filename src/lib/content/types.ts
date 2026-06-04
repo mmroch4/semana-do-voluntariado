@@ -51,13 +51,21 @@ export interface Partner {
   alt: string;
 }
 
-/** The #VoluntariadoUPorto social callout block. */
+/** The #VoluntariadoUPorto social-share callout block. */
 export interface SocialCallout {
   eyebrow: string;
   title: string;
   body: string;
-  cta: string;
-  notice: string;
+  /** Label for the native share-sheet button (shown only where supported). */
+  shareLabel: string;
+  /** Accessible-name prefix for each network link, e.g. "Share on" → "Share on Facebook". */
+  shareOn: string;
+  /** Label for the copy-link button. */
+  copyLabel: string;
+  /** Confirmation announced after a successful copy. */
+  copiedLabel: string;
+  /** Text payload used by the native share sheet and the X / WhatsApp links. */
+  shareText: string;
 }
 
 /* ── Shared chrome (header / footer / a11y) ────────────────────────────── */
