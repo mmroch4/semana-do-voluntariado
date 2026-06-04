@@ -7,7 +7,7 @@ import { CardGrid, MediaCard } from "@/components/ui/MediaCard";
 import { PhotoStrip } from "@/components/ui/PhotoStrip";
 import { Timeline } from "@/components/ui/Timeline";
 import { Split } from "@/components/ui/Split";
-import { CtaBlock } from "@/components/ui/CtaBlock";
+import { CtaSection } from "@/components/ui/CtaSection";
 import { Notice } from "@/components/ui/Notice";
 import { getDictionary } from "@/lib/content/dictionaries";
 import { images } from "@/lib/content/images";
@@ -66,18 +66,14 @@ export function VolunteeringDayPage({ locale }: { locale: Locale }) {
       </Section>
 
       {/* Back to main event */}
-      <Section alt labelledby="back-link-title">
-        <Container>
-          <CtaBlock
-            eyebrow={t.cta.eyebrow}
-            title={t.cta.title}
-            titleId="back-link-title"
-            body={t.cta.body}
-            button={t.cta.button}
-            href={routes[locale].program}
-          />
-        </Container>
-      </Section>
+      <CtaSection
+        eyebrow={t.cta.eyebrow}
+        title={t.cta.title}
+        titleId="back-link-title"
+        body={t.cta.body}
+        button={t.cta.button}
+        href={routes[locale].program}
+      />
     </SiteFrame>
   );
 }

@@ -10,6 +10,7 @@ const base = "/images";
 
 export const images = {
   home: {
+    banner: `${base}/event-banner-logo-trimmed.png`,
     hero: `${base}/generated-1775681890806.png`,
     intro: `${base}/generated-1775681914571.png`,
     highlights: [

@@ -6,7 +6,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Split } from "@/components/ui/Split";
 import { VideoPoster } from "@/components/ui/VideoPoster";
 import { PartnerRow } from "@/components/ui/PartnerRow";
-import { SocialCallout } from "@/components/ui/SocialCallout";
+import { CtaSection } from "@/components/ui/CtaSection";
 import { Notice } from "@/components/ui/Notice";
 import { getDictionary } from "@/lib/content/dictionaries";
 import { images } from "@/lib/content/images";
@@ -67,7 +67,15 @@ export function OrganizationPage({ locale }: { locale: Locale }) {
       </Section>
 
       {/* #VoluntariadoUPorto */}
-      <SocialCallout content={t.social} tone="cream" titleId="social-title" />
+      <CtaSection
+        eyebrow={t.social.eyebrow}
+        title={t.social.title}
+        titleId="social-title"
+        body={t.social.body}
+        button={t.social.cta}
+        href="#"
+        notice={t.social.notice}
+      />
     </SiteFrame>
   );
 }
