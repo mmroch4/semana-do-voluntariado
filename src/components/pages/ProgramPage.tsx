@@ -5,17 +5,43 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Hero } from "@/components/ui/Hero";
 import { Lede } from "@/components/ui/Lede";
 import { PhotoStrip } from "@/components/ui/PhotoStrip";
-import { Timeline } from "@/components/ui/Timeline";
-import { CardGrid, MediaCard } from "@/components/ui/MediaCard";
 import { ActionCardGrid } from "@/components/ui/ActionCardGrid";
 import { Notice } from "@/components/ui/Notice";
+import { ProgramSchedule } from "@/components/program/ProgramSchedule";
+import type { ScheduleDay } from "@/components/program/types";
 import { getDictionary } from "@/lib/content/dictionaries";
+import { activitiesForDay, CATEGORY_KEYS, DAY_NUMBERS, VENUES } from "@/lib/content/activities";
 import { images } from "@/lib/content/images";
 import type { Locale } from "@/lib/i18n/config";
 
 export function ProgramPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const t = dict.program;
+  const s = t.schedule;
+
+  // Join the language-neutral activity data with the dictionary strings into
+  // serializable props — the client subtree never imports the dictionaries.
+  const days: ScheduleDay[] = DAY_NUMBERS.map((day) => ({
+    day,
+    tab: s.dayTabs[day],
+    activities: activitiesForDay(day).map((a) => ({
+      id: a.id,
+      time: a.time,
+      endTime: a.endTime,
+      datetime: a.datetime,
+      category: a.category,
+      categoryLabel: s.categories[a.category],
+      capacity: a.capacity,
+      lat: VENUES[a.venue].lat,
+      lng: VENUES[a.venue].lng,
+      title: s.activities[a.id].title,
+      description: s.activities[a.id].description,
+      venueLabel: s.activities[a.id].venueLabel,
+      venueName: s.venues[a.venue],
+    })),
+  }));
+
+  const categories = CATEGORY_KEYS.map((key) => ({ key, label: s.categories[key] }));
 
   return (
     <SiteFrame locale={locale} dict={dict} pageKey="program">
@@ -30,44 +56,26 @@ export function ProgramPage({ locale }: { locale: Locale }) {
         </Container>
       </Section>
 
-      {/* Opening day */}
-      <Section alt labelledby="opening-title">
+      {/* Day-by-day schedule: tabs + timeline + activity map */}
+      <Section alt labelledby="schedule-title">
         <Container>
-          <SectionHeader heading={t.opening.heading} id="opening-title" />
-          <Timeline entries={t.opening.entries} />
-        </Container>
-      </Section>
-
-      {/* Featured activities */}
-      <Section labelledby="highlights-title">
-        <Container>
-          <SectionHeader heading={t.highlights.heading} id="highlights-title" />
-          <CardGrid>
-            {t.highlights.cards.map((card) => (
-              <MediaCard key={card.title} card={card} />
-            ))}
-          </CardGrid>
-        </Container>
-      </Section>
-
-      {/* Daily activities */}
-      <Section labelledby="daily-title">
-        <Container>
-          <SectionHeader heading={t.daily.heading} id="daily-title" />
-          <CardGrid>
-            {t.daily.cards.map((card) => (
-              <MediaCard key={card.title} card={card} />
-            ))}
-          </CardGrid>
-          <Notice className="mt-8 text-center">{t.daily.notice}</Notice>
-        </Container>
-      </Section>
-
-      {/* Closing day */}
-      <Section alt labelledby="closing-title">
-        <Container>
-          <SectionHeader heading={t.closing.heading} id="closing-title" />
-          <Timeline entries={t.closing.entries} />
+          <SectionHeader heading={s.heading} id="schedule-title" />
+          <ProgramSchedule
+            days={days}
+            categories={categories}
+            paramName={locale === "pt" ? "dia" : "day"}
+            strings={{
+              tabsLabel: s.tabsLabel,
+              filterLabel: s.filterLabel,
+              filterAllLabel: s.filterAllLabel,
+              capacityLabel: s.capacityLabel,
+              mapHeading: s.mapHeading,
+              mapAriaLabel: s.mapAriaLabel,
+              emptyState: s.emptyState,
+              dayAnnounce: s.dayAnnounce,
+              notice: s.notice,
+            }}
+          />
         </Container>
       </Section>
 

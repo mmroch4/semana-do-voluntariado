@@ -139,122 +139,168 @@ export const pt: Dictionary = {
       heading: { title: "Uma Semana de Impacto", subtitle: "6 dias de ações solidárias" },
       lede: "A Semana #SerCidadão reúne a comunidade da U.Porto em torno da cidadania, voluntariado e responsabilidade social. Descubra as atividades e junte-se a nós.",
     },
-    opening: {
-      heading: { title: "Dia de Abertura · 21 Set", subtitle: "Programa do primeiro dia" },
-      entries: [
-        {
-          time: "10:00",
-          datetime: "2026-09-21T10:00",
+    schedule: {
+      heading: { title: "Programa da Semana", subtitle: "Escolha um dia para ver as atividades" },
+      tabsLabel: "Dias do evento",
+      dayTabs: {
+        1: { short: "Seg 21", long: "Segunda-feira, 21 de setembro" },
+        2: { short: "Ter 22", long: "Terça-feira, 22 de setembro" },
+        3: { short: "Qua 23", long: "Quarta-feira, 23 de setembro" },
+        4: { short: "Qui 24", long: "Quinta-feira, 24 de setembro" },
+        5: { short: "Sex 25", long: "Sexta-feira, 25 de setembro" },
+        6: { short: "Sáb 26", long: "Sábado, 26 de setembro" },
+      },
+      activities: {
+        "d1-abertura": {
           title: "Cerimónia de Abertura",
-          description: "Reitoria da U.Porto · Salão Nobre",
-          thumb: images.program.opening[0],
+          description: "Sessão oficial de abertura da Semana #SerCidadão, com a presença da Reitoria e da equipa ReVIReS.",
+          venueLabel: "Reitoria da U.Porto · Salão Nobre",
         },
-        {
-          time: "11:30",
-          datetime: "2026-09-21T11:30",
+        "d1-painel": {
           title: "Painel “Voluntariado no Ensino Superior”",
-          description: "Reitoria · Sala de Atos",
-          thumb: images.program.opening[1],
+          description: "Conversa com estudantes, docentes e instituições sociais sobre o papel do voluntariado na academia.",
+          venueLabel: "Reitoria · Sala de Atos",
         },
-        {
-          time: "14:30",
-          datetime: "2026-09-21T14:30",
+        "d1-workshop-integracao": {
           title: "Workshop de Integração",
-          description: "FADEUP · Pavilhão",
-          thumb: images.program.opening[2],
+          description: "Dinâmicas de grupo para conhecer outros voluntários e formar equipas para a semana.",
+          venueLabel: "FADEUP · Pavilhão",
         },
-      ],
-    },
-    highlights: {
-      heading: {
-        title: "Atividades em Destaque",
-        subtitle: "Experiências que marcam a diferença",
-      },
-      cards: [
-        {
-          image: images.program.highlights[0],
-          chip: "Workshop",
+        "d1-caminhada": {
+          title: "Caminhada Solidária",
+          description: "Percurso acessível pelos jardins, aberto a toda a comunidade.",
+          venueLabel: "Jardins do Palácio de Cristal · Entrada principal",
+        },
+        "d2-recolha-bens": {
+          title: "Recolha de Bens Essenciais",
+          description: "Triagem e embalamento de bens doados para instituições parceiras.",
+          venueLabel: "FPCEUP · Átrio",
+        },
+        "d2-comunicacao-inclusiva": {
           title: "Comunicação Inclusiva",
-          text: "FLUP · 22 Set · 14:00–16:00",
+          description: "Workshop prático sobre linguagem clara, acessível e não discriminatória.",
+          venueLabel: "FLUP · Anfiteatro 1",
         },
-        {
-          image: images.program.highlights[1],
-          chip: "Ação Social",
-          title: "Banco Alimentar",
-          text: "FEUP · 23 Set · 09:00–13:00",
-        },
-        {
-          image: images.program.highlights[2],
-          chip: "Conferência",
-          title: "Sustentabilidade e Comunidade",
-          text: "FCUP · 24 Set · 10:00–12:00",
-        },
-      ],
-    },
-    daily: {
-      heading: {
-        title: "Atividades Diárias",
-        subtitle: "Programação ao longo da semana",
-      },
-      cards: [
-        {
-          image: images.program.daily[0],
-          chip: "Workshop",
+        "d2-design-inclusivo": {
           title: "Design Inclusivo",
-          text: "FBAUP · 22 Set · 14:00–16:00",
+          description: "Princípios de design universal aplicados a materiais de comunicação solidária.",
+          venueLabel: "FBAUP · Sala de Projeto",
         },
-        {
-          image: images.program.daily[1],
-          chip: "Voluntariado",
+        "d2-cinema-cidadania": {
+          title: "Ciclo de Cinema e Cidadania",
+          description: "Exibição de documentário seguida de conversa com convidados.",
+          venueLabel: "Reitoria · Auditório",
+        },
+        "d3-banco-alimentar": {
+          title: "Banco Alimentar",
+          description: "Campanha de recolha e organização de alimentos com voluntários da U.Porto.",
+          venueLabel: "FEUP · Pavilhão B",
+        },
+        "d3-limpeza-comunitaria": {
           title: "Limpeza Comunitária",
-          text: "Jardins do Palácio · 23 Set · 09:00–12:00",
+          description: "Ação ambiental de limpeza e manutenção dos espaços verdes da cidade.",
+          venueLabel: "Jardins do Palácio de Cristal",
         },
-        {
-          image: images.program.daily[2],
-          chip: "Debate",
+        "d3-saude-mental": {
           title: "Saúde Mental no Campus",
-          text: "FMUP · 23 Set · 15:00–17:00",
+          description: "Debate sobre bem-estar e apoio entre pares no ensino superior.",
+          venueLabel: "FMUP · Aula Magna",
         },
-        {
-          image: images.program.daily[3],
-          chip: "Formação",
+        "d3-teatro-oprimido": {
+          title: "Oficina de Teatro do Oprimido",
+          description: "Teatro participativo para explorar situações de exclusão e cidadania ativa.",
+          venueLabel: "FLUP · Sala Polivalente",
+        },
+        "d4-dadiva-sangue": {
+          title: "Dádiva de Sangue",
+          description: "Sessão de recolha de sangue em parceria com o Instituto Português do Sangue.",
+          venueLabel: "Reitoria · Sala de Exposições",
+        },
+        "d4-sustentabilidade": {
+          title: "Sustentabilidade e Comunidade",
+          description: "Conferência sobre projetos locais de sustentabilidade e impacto social.",
+          venueLabel: "FCUP · Grande Auditório",
+        },
+        "d4-primeiros-socorros": {
           title: "Primeiros Socorros",
-          text: "ICBAS · 24 Set · 10:00–13:00",
+          description: "Formação básica de suporte de vida com certificado de participação.",
+          venueLabel: "ICBAS · Laboratório de Competências",
         },
-        {
-          image: images.program.daily[4],
-          chip: "Cultura",
+        "d4-torneio-interfaculdades": {
+          title: "Torneio Solidário Interfaculdades",
+          description: "Torneio desportivo cujas inscrições revertem para causas sociais.",
+          venueLabel: "Estádio Universitário · Campos exteriores",
+        },
+        "d5-jardim-botanico": {
+          title: "Voluntariado no Jardim Botânico",
+          description: "Manhã de manutenção dos jardins e apoio à equipa de jardinagem.",
+          venueLabel: "Jardim Botânico do Porto",
+        },
+        "d5-exposicao-solidaria": {
           title: "Exposição Solidária",
-          text: "FBAUP · 25 Set · Todo o dia",
+          description: "Mostra de trabalhos de estudantes; receitas das vendas apoiam projetos sociais.",
+          venueLabel: "FBAUP · Museu",
         },
-      ],
-      notice: "Programa sujeito a alterações.",
-    },
-    closing: {
-      heading: { title: "Dia de Encerramento · 26 Set", subtitle: "Programa do último dia" },
-      entries: [
-        {
-          time: "10:00",
-          datetime: "2026-09-26T10:00",
+        "d5-projetos-voluntariado": {
+          title: "Como Criar um Projeto de Voluntariado",
+          description: "Workshop prático para transformar uma ideia solidária num projeto sustentável.",
+          venueLabel: "FPCEUP · Sala 204",
+        },
+        "d5-concerto-solidario": {
+          title: "Concerto Solidário",
+          description: "Atuação de grupos musicais da U.Porto com entrada por donativo.",
+          venueLabel: "Reitoria · Pátio interior",
+        },
+        "d6-corrida-solidaria": {
+          title: "Corrida Solidária U.Porto",
+          description: "Corrida e caminhada abertas à cidade; inscrição reverte para instituições parceiras.",
+          venueLabel: "Estádio Universitário · Pista de atletismo",
+        },
+        "d6-reflexao-coletiva": {
           title: "Reflexão Coletiva",
-          description: "Jardim Botânico do Porto",
-          thumb: images.program.closing[0],
+          description: "Balanço partilhado da semana entre voluntários, organizações e participantes.",
+          venueLabel: "Jardim Botânico do Porto",
         },
-        {
-          time: "14:00",
-          datetime: "2026-09-26T14:00",
-          title: "Atividade de Encerramento",
-          description: "Reitoria da U.Porto",
-          thumb: images.program.closing[1],
+        "d6-mostra-projetos": {
+          title: "Mostra de Projetos Solidários",
+          description: "Apresentação dos projetos e parcerias nascidos durante a semana.",
+          venueLabel: "Reitoria da U.Porto · Claustro",
         },
-        {
-          time: "16:30",
-          datetime: "2026-09-26T16:30",
+        "d6-cerimonia-encerramento": {
           title: "Cerimónia de Encerramento",
-          description: "Reitoria · Salão Nobre",
-          thumb: images.program.closing[2],
+          description: "Sessão de encerramento com entrega de reconhecimentos aos voluntários.",
+          venueLabel: "Reitoria · Salão Nobre",
         },
-      ],
+      },
+      categories: {
+        conference: "Conferência",
+        volunteering: "Voluntariado",
+        workshop: "Workshop",
+        sport: "Desporto",
+        culture: "Cultura",
+      },
+      venues: {
+        reitoria: "Reitoria da U.Porto",
+        feup: "FEUP — Faculdade de Engenharia",
+        flup: "FLUP — Faculdade de Letras",
+        fcup: "FCUP — Faculdade de Ciências",
+        fbaup: "FBAUP — Faculdade de Belas Artes",
+        fmup: "FMUP — Faculdade de Medicina",
+        icbas: "ICBAS — Instituto de Ciências Biomédicas Abel Salazar",
+        fpceup: "FPCEUP — Faculdade de Psicologia e de Ciências da Educação",
+        fadeup: "FADEUP — Faculdade de Desporto",
+        estadio: "Estádio Universitário do Porto",
+        jardimBotanico: "Jardim Botânico do Porto",
+        palacioCristal: "Jardins do Palácio de Cristal",
+      },
+      filterLabel: "Filtrar por categoria",
+      filterAllLabel: "Todas",
+      capacityLabel: "Lotação: {n} participantes",
+      mapHeading: { title: "Mapa das Atividades", subtitle: "Locais das atividades do dia selecionado" },
+      mapAriaLabel: "Mapa com a localização das atividades do dia selecionado",
+      emptyState: "Nenhuma atividade corresponde aos filtros selecionados.",
+      dayAnnounce: "A mostrar {day} — {count} atividades",
+      notice: "Programa provisório — atividades, horários e locais sujeitos a confirmação.",
     },
     participate: {
       heading: { title: "Como Participar", subtitle: "Junte-se à comunidade" },

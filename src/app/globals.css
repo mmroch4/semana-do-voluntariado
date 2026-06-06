@@ -160,6 +160,54 @@
       rgba(61, 31, 21, 0.93) 100%
     );
   }
+
+  /* Program activity map (Leaflet). Popups and the divIcon pin render outside
+     React's styled tree, so they're themed here with the design tokens,
+     scoped under `.program-map`. */
+  .program-map .program-pin-body {
+    fill: var(--color-brown);
+  }
+
+  .program-map .program-pin-dot {
+    fill: var(--color-surface-warm);
+  }
+
+  /* Keyboard-focused markers get the same always-visible ring as the rest of
+     the site (Leaflet markers are focusable but unstyled by default). */
+  .program-map .leaflet-marker-icon:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .program-map .leaflet-popup-content-wrapper {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .program-map .leaflet-popup-tip {
+    background-color: var(--color-surface);
+  }
+
+  .program-map .leaflet-popup-content {
+    margin: 0.875rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .program-map .leaflet-popup-content p {
+    margin: 0 0 0.25rem;
+  }
+
+  .program-map .program-popup-title {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-text-primary);
+  }
 }
 
 /* Honour the user's reduced-motion preference globally. */

@@ -139,116 +139,168 @@ export const en: Dictionary = {
       heading: { title: "A Week of Impact", subtitle: "6 days of solidarity actions" },
       lede: "The Semana #SerCidadão brings the U.Porto community together around citizenship, volunteering and social responsibility. Discover the activities and join us.",
     },
-    opening: {
-      heading: { title: "Opening Day · 21 Sep", subtitle: "First day's programme" },
-      entries: [
-        {
-          time: "10:00",
-          datetime: "2026-09-21T10:00",
+    schedule: {
+      heading: { title: "Week Programme", subtitle: "Pick a day to see its activities" },
+      tabsLabel: "Event days",
+      dayTabs: {
+        1: { short: "Mon 21", long: "Monday, 21 September" },
+        2: { short: "Tue 22", long: "Tuesday, 22 September" },
+        3: { short: "Wed 23", long: "Wednesday, 23 September" },
+        4: { short: "Thu 24", long: "Thursday, 24 September" },
+        5: { short: "Fri 25", long: "Friday, 25 September" },
+        6: { short: "Sat 26", long: "Saturday, 26 September" },
+      },
+      activities: {
+        "d1-abertura": {
           title: "Opening Ceremony",
-          description: "U.Porto Rectory · Salão Nobre",
-          thumb: images.program.opening[0],
+          description: "Official opening of the Semana #SerCidadão, with the Rectory and the ReVIReS team.",
+          venueLabel: "U.Porto Rectory · Salão Nobre",
         },
-        {
-          time: "11:30",
-          datetime: "2026-09-21T11:30",
+        "d1-painel": {
           title: "Panel “Volunteering in Higher Education”",
-          description: "Rectory · Sala de Atos",
-          thumb: images.program.opening[1],
+          description: "A conversation with students, lecturers and social institutions on volunteering in academia.",
+          venueLabel: "Rectory · Sala de Atos",
         },
-        {
-          time: "14:30",
-          datetime: "2026-09-21T14:30",
+        "d1-workshop-integracao": {
           title: "Integration Workshop",
-          description: "FADEUP · Sports Hall",
-          thumb: images.program.opening[2],
+          description: "Group dynamics to meet fellow volunteers and form teams for the week.",
+          venueLabel: "FADEUP · Sports Hall",
         },
-      ],
-    },
-    highlights: {
-      heading: { title: "Featured Activities", subtitle: "Experiences that make a difference" },
-      cards: [
-        {
-          image: images.program.highlights[0],
-          chip: "Workshop",
+        "d1-caminhada": {
+          title: "Solidarity Walk",
+          description: "An accessible route through the gardens, open to the whole community.",
+          venueLabel: "Crystal Palace Gardens · Main entrance",
+        },
+        "d2-recolha-bens": {
+          title: "Essential Goods Collection",
+          description: "Sorting and packing donated goods for partner institutions.",
+          venueLabel: "FPCEUP · Atrium",
+        },
+        "d2-comunicacao-inclusiva": {
           title: "Inclusive Communication",
-          text: "FLUP · 22 Sep · 14:00–16:00",
+          description: "Hands-on workshop on clear, accessible and non-discriminatory language.",
+          venueLabel: "FLUP · Amphitheatre 1",
         },
-        {
-          image: images.program.highlights[1],
-          chip: "Social Action",
-          title: "Food Bank",
-          text: "FEUP · 23 Sep · 09:00–13:00",
-        },
-        {
-          image: images.program.highlights[2],
-          chip: "Conference",
-          title: "Sustainability and Community",
-          text: "FCUP · 24 Sep · 10:00–12:00",
-        },
-      ],
-    },
-    daily: {
-      heading: { title: "Daily Activities", subtitle: "Programming throughout the week" },
-      cards: [
-        {
-          image: images.program.daily[0],
-          chip: "Workshop",
+        "d2-design-inclusivo": {
           title: "Inclusive Design",
-          text: "FBAUP · 22 Sep · 14:00–16:00",
+          description: "Universal design principles applied to solidarity communication materials.",
+          venueLabel: "FBAUP · Project Room",
         },
-        {
-          image: images.program.daily[1],
-          chip: "Volunteering",
+        "d2-cinema-cidadania": {
+          title: "Cinema and Citizenship Series",
+          description: "Documentary screening followed by a conversation with guests.",
+          venueLabel: "Rectory · Auditorium",
+        },
+        "d3-banco-alimentar": {
+          title: "Food Bank",
+          description: "Food collection and sorting campaign with U.Porto volunteers.",
+          venueLabel: "FEUP · Pavilion B",
+        },
+        "d3-limpeza-comunitaria": {
           title: "Community Clean-up",
-          text: "Palácio Gardens · 23 Sep · 09:00–12:00",
+          description: "Environmental action cleaning and caring for the city's green spaces.",
+          venueLabel: "Crystal Palace Gardens",
         },
-        {
-          image: images.program.daily[2],
-          chip: "Debate",
+        "d3-saude-mental": {
           title: "Mental Health on Campus",
-          text: "FMUP · 23 Sep · 15:00–17:00",
+          description: "A debate on well-being and peer support in higher education.",
+          venueLabel: "FMUP · Aula Magna",
         },
-        {
-          image: images.program.daily[3],
-          chip: "Training",
+        "d3-teatro-oprimido": {
+          title: "Theatre of the Oppressed Workshop",
+          description: "Participatory theatre exploring exclusion and active citizenship.",
+          venueLabel: "FLUP · Multipurpose Room",
+        },
+        "d4-dadiva-sangue": {
+          title: "Blood Donation",
+          description: "Blood collection session in partnership with the Portuguese Blood Institute.",
+          venueLabel: "Rectory · Exhibition Room",
+        },
+        "d4-sustentabilidade": {
+          title: "Sustainability and Community",
+          description: "Conference on local sustainability projects and social impact.",
+          venueLabel: "FCUP · Main Auditorium",
+        },
+        "d4-primeiros-socorros": {
           title: "First Aid",
-          text: "ICBAS · 24 Sep · 10:00–13:00",
+          description: "Basic life-support training with a certificate of participation.",
+          venueLabel: "ICBAS · Skills Laboratory",
         },
-        {
-          image: images.program.daily[4],
-          chip: "Culture",
+        "d4-torneio-interfaculdades": {
+          title: "Inter-Faculty Solidarity Tournament",
+          description: "Sports tournament whose entry fees go to social causes.",
+          venueLabel: "University Stadium · Outdoor pitches",
+        },
+        "d5-jardim-botanico": {
+          title: "Volunteering at the Botanical Garden",
+          description: "A morning of garden maintenance supporting the gardening team.",
+          venueLabel: "Porto Botanical Garden",
+        },
+        "d5-exposicao-solidaria": {
           title: "Solidarity Exhibition",
-          text: "FBAUP · 25 Sep · All day",
+          description: "Showcase of student work; sale proceeds support social projects.",
+          venueLabel: "FBAUP · Museum",
         },
-      ],
-      notice: "Programme subject to change.",
-    },
-    closing: {
-      heading: { title: "Closing Day · 26 Sep", subtitle: "Last day's programme" },
-      entries: [
-        {
-          time: "10:00",
-          datetime: "2026-09-26T10:00",
+        "d5-projetos-voluntariado": {
+          title: "How to Start a Volunteering Project",
+          description: "Practical workshop on turning a solidarity idea into a sustainable project.",
+          venueLabel: "FPCEUP · Room 204",
+        },
+        "d5-concerto-solidario": {
+          title: "Solidarity Concert",
+          description: "Performance by U.Porto music groups with entry by donation.",
+          venueLabel: "Rectory · Inner courtyard",
+        },
+        "d6-corrida-solidaria": {
+          title: "U.Porto Solidarity Run",
+          description: "Run and walk open to the city; registration fees go to partner institutions.",
+          venueLabel: "University Stadium · Athletics track",
+        },
+        "d6-reflexao-coletiva": {
           title: "Collective Reflection",
-          description: "Porto Botanical Garden",
-          thumb: images.program.closing[0],
+          description: "A shared look back at the week with volunteers, organizations and participants.",
+          venueLabel: "Porto Botanical Garden",
         },
-        {
-          time: "14:00",
-          datetime: "2026-09-26T14:00",
-          title: "Closing Activity",
-          description: "U.Porto Rectory",
-          thumb: images.program.closing[1],
+        "d6-mostra-projetos": {
+          title: "Solidarity Projects Showcase",
+          description: "Presentation of the projects and partnerships born during the week.",
+          venueLabel: "U.Porto Rectory · Cloister",
         },
-        {
-          time: "16:30",
-          datetime: "2026-09-26T16:30",
+        "d6-cerimonia-encerramento": {
           title: "Closing Ceremony",
-          description: "Rectory · Salão Nobre",
-          thumb: images.program.closing[2],
+          description: "Closing session with recognition awards for the volunteers.",
+          venueLabel: "Rectory · Salão Nobre",
         },
-      ],
+      },
+      categories: {
+        conference: "Conference",
+        volunteering: "Volunteering",
+        workshop: "Workshop",
+        sport: "Sport",
+        culture: "Culture",
+      },
+      venues: {
+        reitoria: "U.Porto Rectory",
+        feup: "FEUP — Faculty of Engineering",
+        flup: "FLUP — Faculty of Arts and Humanities",
+        fcup: "FCUP — Faculty of Sciences",
+        fbaup: "FBAUP — Faculty of Fine Arts",
+        fmup: "FMUP — Faculty of Medicine",
+        icbas: "ICBAS — School of Medicine and Biomedical Sciences",
+        fpceup: "FPCEUP — Faculty of Psychology and Education Sciences",
+        fadeup: "FADEUP — Faculty of Sport",
+        estadio: "University of Porto Stadium",
+        jardimBotanico: "Porto Botanical Garden",
+        palacioCristal: "Crystal Palace Gardens",
+      },
+      filterLabel: "Filter by category",
+      filterAllLabel: "All",
+      capacityLabel: "Capacity: {n} participants",
+      mapHeading: { title: "Activity Map", subtitle: "Venues for the selected day's activities" },
+      mapAriaLabel: "Map with the locations of the selected day's activities",
+      emptyState: "No activities match the selected filters.",
+      dayAnnounce: "Showing {day} — {count} activities",
+      notice: "Provisional programme — activities, times and venues subject to confirmation.",
     },
     participate: {
       heading: { title: "How to Take Part", subtitle: "Join the community" },

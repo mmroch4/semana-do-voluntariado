@@ -1,4 +1,5 @@
 import type { PageKey } from "@/lib/i18n/routes";
+import type { ActivityId, CategoryKey, DayNumber, VenueKey } from "@/lib/content/activities";
 
 /* ── Small reusable content shapes ─────────────────────────────────────── */
 
@@ -123,14 +124,49 @@ export interface HomeContent {
   social: SocialCallout;
 }
 
+/** Translated strings for one program activity (joined by `Activity.id`). */
+export interface ActivityStrings {
+  title: string;
+  description: string;
+  /** Venue + room line shown in the timeline/popup, e.g. "Reitoria · Salão Nobre". */
+  venueLabel: string;
+}
+
+/** The day-by-day schedule block (tabs + timeline + map + filters). */
+export interface ProgramScheduleContent {
+  heading: SectionHeading;
+  /** Accessible name for the day tablist. */
+  tabsLabel: string;
+  /** Tab labels per event day: `short` on the tab, `long` for announcements. */
+  dayTabs: Record<DayNumber, { short: string; long: string }>;
+  /** Translated strings for every activity in `ACTIVITIES`. */
+  activities: Record<ActivityId, ActivityStrings>;
+  /** Category chip labels. */
+  categories: Record<CategoryKey, string>;
+  /** Venue names (map popups and accessible marker names). */
+  venues: Record<VenueKey, string>;
+  /** Legend for the category filter group. */
+  filterLabel: string;
+  /** Reset chip that clears the category filter. */
+  filterAllLabel: string;
+  /** Capacity line template; `{n}` is replaced by the number, e.g. "Lotação: {n} participantes". */
+  capacityLabel: string;
+  mapHeading: SectionHeading;
+  /** Accessible name for the map region. */
+  mapAriaLabel: string;
+  /** Shown when the active filter leaves a day with no activities. */
+  emptyState: string;
+  /** aria-live template on day/filter change; `{day}` and `{count}` are replaced. */
+  dayAnnounce: string;
+  /** Placeholder-program disclaimer shown under the schedule. */
+  notice: string;
+}
+
 export interface ProgramContent {
   meta: Meta;
   hero: { chip: string; title: string; subtitle: string };
   intro: { heading: SectionHeading; lede: string };
-  opening: { heading: SectionHeading; entries: TimelineEntry[] };
-  highlights: { heading: SectionHeading; cards: MediaCard[] };
-  daily: { heading: SectionHeading; cards: MediaCard[]; notice: string };
-  closing: { heading: SectionHeading; entries: TimelineEntry[] };
+  schedule: ProgramScheduleContent;
   participate: { heading: SectionHeading; cards: ActionCard[] };
   note: string;
 }
