@@ -43,20 +43,18 @@ export const en: Dictionary = {
       description:
         "Week of Citizenship, Volunteering and Social Responsibility at the University of Porto. 21–26 September 2026. Organised by ReVIReS.",
     },
+    announcement: {
+      label: "Starts in",
+      units: { days: "days", hours: "hrs", minutes: "min", seconds: "sec" },
+      ariaLabel: "Countdown to the start of the Semana #SerCidadão",
+      noscript: "21–26 September 2026",
+      ended: "The Semana #SerCidadão is underway!",
+    },
     hero: {
       chip: "U.PORTO · SEPTEMBER 2026",
       title: "Semana #SerCidadão",
       subtitle:
         "Week of Citizenship, Volunteering and Social Responsibility — 21 to 26 September 2026",
-      countdownAriaLabel: "Countdown to the opening ceremony",
-      countdownUnits: {
-        days: "Days",
-        hours: "Hours",
-        minutes: "Minutes",
-        seconds: "Seconds",
-      },
-      countdownNoscript: "Opening ceremony: 21 September 2026, 11:30.",
-      countdownEnded: "The Semana #SerCidadão has begun!",
       primaryCta: "View programme",
       secondaryCta: "How to take part",
     },

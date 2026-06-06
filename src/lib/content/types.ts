@@ -100,19 +100,18 @@ export interface Chrome {
 
 export interface HomeContent {
   meta: Meta;
+  /** Countdown announcement bar between the header and the logo banner. */
+  announcement: {
+    label: string;
+    units: { days: string; hours: string; minutes: string; seconds: string };
+    ariaLabel: string;
+    noscript: string;
+    ended: string;
+  };
   hero: {
     chip: string;
     title: string;
     subtitle: string;
-    countdownAriaLabel: string;
-    countdownUnits: {
-      days: string;
-      hours: string;
-      minutes: string;
-      seconds: string;
-    };
-    countdownNoscript: string;
-    countdownEnded: string;
     primaryCta: string;
     secondaryCta: string;
   };

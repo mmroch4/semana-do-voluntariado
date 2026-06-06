@@ -34,7 +34,16 @@ export function SiteFrame({
         activePage={activePage}
         langSwitchHref={langSwitchHref}
       />
-      <main id="main" tabIndex={-1}>
+      {/* `scroll-margin-top` matches the sticky header height (h-18/md:h-21 +
+          1px border). Next.js focuses and scrolls `<main>` into view after
+          client-side navigations (fixed/sticky elements are skipped), and the
+          skip link anchors here too — without this margin the pinned header
+          would cover the top of the page (e.g. the countdown bar). */}
+      <main
+        id="main"
+        tabIndex={-1}
+        className="scroll-mt-[calc(4.5rem+1px)] md:scroll-mt-[calc(5.25rem+1px)]"
+      >
         {children}
       </main>
       <Footer locale={locale} chrome={dict.chrome} />

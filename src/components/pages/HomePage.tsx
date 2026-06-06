@@ -11,8 +11,10 @@ import { Notice } from "@/components/ui/Notice";
 import { PhotoStrip } from "@/components/ui/PhotoStrip";
 import { PartnerRow } from "@/components/ui/PartnerRow";
 import { ShareSection } from "@/components/ui/ShareSection";
+import { CountdownBar } from "@/components/ui/CountdownBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getDictionary } from "@/lib/content/dictionaries";
+import { EVENT_OPENING_ISO } from "@/lib/content/event";
 import { images } from "@/lib/content/images";
 import { homeJsonLd } from "@/lib/seo";
 import { routes } from "@/lib/i18n/routes";
@@ -27,6 +29,16 @@ export function HomePage({ locale }: { locale: Locale }) {
     <>
       <JsonLd data={homeJsonLd(locale, t.meta.description)} />
       <SiteFrame locale={locale} dict={dict} pageKey="home">
+      {/* Countdown announcement bar */}
+      <CountdownBar
+        targetIso={EVENT_OPENING_ISO}
+        label={t.announcement.label}
+        units={t.announcement.units}
+        ariaLabel={t.announcement.ariaLabel}
+        noscriptMessage={t.announcement.noscript}
+        endedMessage={t.announcement.ended}
+      />
+
       {/* White logo banner + CTAs */}
       <LogoBanner
         image={images.home.banner}

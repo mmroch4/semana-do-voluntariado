@@ -43,20 +43,18 @@ export const pt: Dictionary = {
       description:
         "Semana da Cidadania, Voluntariado e Responsabilidade Social da Universidade do Porto. 21 a 26 de setembro de 2026. Organização: ReVIReS.",
     },
+    announcement: {
+      label: "Começa em",
+      units: { days: "dias", hours: "horas", minutes: "min", seconds: "seg" },
+      ariaLabel: "Contagem decrescente para o início da Semana #SerCidadão",
+      noscript: "21 a 26 de setembro de 2026",
+      ended: "A Semana #SerCidadão está a decorrer!",
+    },
     hero: {
       chip: "U.PORTO · SETEMBRO 2026",
       title: "Semana #SerCidadão",
       subtitle:
         "Semana da Cidadania, Voluntariado e Responsabilidade Social — 21 a 26 de setembro de 2026",
-      countdownAriaLabel: "Contagem decrescente para a cerimónia de abertura",
-      countdownUnits: {
-        days: "Dias",
-        hours: "Horas",
-        minutes: "Minutos",
-        seconds: "Segundos",
-      },
-      countdownNoscript: "Cerimónia de abertura: 21 de setembro de 2026, 11h30.",
-      countdownEnded: "A Semana #SerCidadão começou!",
       primaryCta: "Ver programa",
       secondaryCta: "Como participar",
     },
