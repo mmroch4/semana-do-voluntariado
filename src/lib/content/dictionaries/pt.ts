@@ -24,6 +24,7 @@ export const pt: Dictionary = {
     },
     footer: {
       brandName: "Semana #SerCidadão",
+      dates: "21 a 26 de setembro de 2026",
       org: "U.Porto · ReVIReS",
       tagline: "Cidadania, Voluntariado e Responsabilidade Social",
       navLabel: "Navegação",

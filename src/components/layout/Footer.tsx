@@ -17,6 +17,9 @@ export function Footer({ locale, chrome }: { locale: Locale; chrome: Chrome }) {
             <p className="m-0 font-display text-[1.25rem] font-medium text-text-inverse">
               {f.brandName}
             </p>
+            <p className="m-0 text-[0.8125rem] font-medium tracking-[0.3px] text-surface-alt">
+              {f.dates}
+            </p>
             <p className="text-[0.8125rem] tracking-[0.3px] text-surface-alt">{f.org}</p>
             <p className="text-xs leading-normal text-text-on-dark-muted">{f.tagline}</p>
           </div>

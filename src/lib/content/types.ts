@@ -83,6 +83,8 @@ export interface Chrome {
   nav: Record<PageKey, string>;
   footer: {
     brandName: string;
+    /** Event dates, always shown under the brand name (e.g. "21 a 26 de setembro de 2026"). */
+    dates: string;
     org: string;
     tagline: string;
     navLabel: string;
