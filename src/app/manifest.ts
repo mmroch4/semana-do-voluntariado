@@ -8,7 +8,7 @@ import { SITE_NAME } from "@/lib/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE_NAME,
-    short_name: "Semana Solidária",
+    short_name: "Semana #SerCidadão",
     description:
       "Semana da Cidadania, Voluntariado e Responsabilidade Social da U.Porto — 21 a 26 de setembro de 2026.",
     start_url: "/",

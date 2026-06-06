@@ -8,4 +8,4 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://semanasolidaria.up.pt"
 ).replace(/\/$/, "");
 
-export const SITE_NAME = "Semana Solidária U.Porto";
+export const SITE_NAME = "Semana #SerCidadão";

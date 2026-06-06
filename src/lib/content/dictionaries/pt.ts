@@ -10,7 +10,7 @@ export const pt: Dictionary = {
     langSwitchLabel: "English",
     skipToContent: "Saltar para o conteúdo",
     header: {
-      logo: "Semana Solidária",
+      logo: "Semana #SerCidadão",
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
     },
@@ -23,7 +23,7 @@ export const pt: Dictionary = {
       privacy: "Privacidade",
     },
     footer: {
-      brandName: "Semana Solidária",
+      brandName: "Semana #SerCidadão",
       org: "U.Porto · ReVIReS",
       tagline: "Cidadania, Voluntariado e Responsabilidade Social",
       navLabel: "Navegação",
@@ -37,13 +37,13 @@ export const pt: Dictionary = {
 
   home: {
     meta: {
-      title: "Início — Semana Solidária U.Porto",
+      title: "Início — Semana #SerCidadão",
       description:
         "Semana da Cidadania, Voluntariado e Responsabilidade Social da Universidade do Porto. 21 a 26 de setembro de 2026. Organização: ReVIReS.",
     },
     hero: {
       chip: "U.PORTO · SETEMBRO 2026",
-      title: "Semana Solidária U.Porto",
+      title: "Semana #SerCidadão",
       subtitle:
         "Semana da Cidadania, Voluntariado e Responsabilidade Social — 21 a 26 de setembro de 2026",
       countdownAriaLabel: "Contagem decrescente para a cerimónia de abertura",
@@ -54,12 +54,12 @@ export const pt: Dictionary = {
         seconds: "Segundos",
       },
       countdownNoscript: "Cerimónia de abertura: 21 de setembro de 2026, 11h30.",
-      countdownEnded: "A Semana Solidária começou!",
+      countdownEnded: "A Semana #SerCidadão começou!",
       primaryCta: "Ver programa",
       secondaryCta: "Como participar",
     },
     intro: {
-      heading: "Sobre a Semana Solidária",
+      heading: "Sobre a Semana #SerCidadão",
       body: "Uma semana dedicada à cidadania e ao voluntariado, promovida pela ReVIReS — Rede de Voluntariado, Inclusão e Responsabilidade Social da Universidade do Porto. Durante seis dias a Universidade abre as suas portas a ações de voluntariado, sensibilização e partilha.",
       cta: "Saber mais",
       imageAlt: "Estudantes da U.Porto em atividade de voluntariado",
@@ -89,8 +89,8 @@ export const pt: Dictionary = {
     },
     video: {
       srTitle: "Vídeo institucional",
-      caption: "Descobre a Semana Solidária",
-      ariaLabel: "Ver vídeo: Descobre a Semana Solidária",
+      caption: "Descobre a Semana #SerCidadão",
+      ariaLabel: "Ver vídeo: Descobre a Semana #SerCidadão",
     },
     ods: {
       heading: {
@@ -115,29 +115,29 @@ export const pt: Dictionary = {
     social: {
       eyebrow: "Partilhe nas redes sociais",
       title: "#VoluntariadoUPorto",
-      body: "Junte-se ao movimento. Partilhe a sua experiência e inspire outros a fazer parte da Semana Solidária.",
+      body: "Junte-se ao movimento. Partilhe a sua experiência e inspire outros a fazer parte da Semana #SerCidadão.",
       shareLabel: "Partilhar",
       shareOn: "Partilhar no",
       copyLabel: "Copiar ligação",
       copiedLabel: "Ligação copiada!",
-      shareText: "Participe na Semana Solidária U.Porto, de 21 a 26 de setembro de 2026. #VoluntariadoUPorto",
+      shareText: "Participe na Semana #SerCidadão, de 21 a 26 de setembro de 2026. #VoluntariadoUPorto",
     },
   },
 
   program: {
     meta: {
-      title: "Programa — Semana Solidária U.Porto",
+      title: "Programa — Semana #SerCidadão",
       description:
         "Programa da Semana da Cidadania, Voluntariado e Responsabilidade Social da Universidade do Porto. 21 a 26 de setembro de 2026.",
     },
     hero: {
-      chip: "Semana Solidária · U.Porto",
+      chip: "Semana #SerCidadão · U.Porto",
       title: "Programa",
       subtitle: "21 a 26 de setembro 2026",
     },
     intro: {
       heading: { title: "Uma Semana de Impacto", subtitle: "6 dias de ações solidárias" },
-      lede: "A Semana Solidária reúne a comunidade da U.Porto em torno da cidadania, voluntariado e responsabilidade social. Descubra as atividades e junte-se a nós.",
+      lede: "A Semana #SerCidadão reúne a comunidade da U.Porto em torno da cidadania, voluntariado e responsabilidade social. Descubra as atividades e junte-se a nós.",
     },
     opening: {
       heading: { title: "Dia de Abertura · 21 Set", subtitle: "Programa do primeiro dia" },
@@ -284,12 +284,12 @@ export const pt: Dictionary = {
 
   location: {
     meta: {
-      title: "Localização — Semana Solidária U.Porto",
+      title: "Localização — Semana #SerCidadão",
       description:
-        "Os três polos da Universidade do Porto, faculdades participantes e locais da comunidade que acolhem a Semana Solidária 2026.",
+        "Os três polos da Universidade do Porto, faculdades participantes e locais da comunidade que acolhem a Semana #SerCidadão 2026.",
     },
     hero: {
-      chip: "Semana Solidária · U.Porto",
+      chip: "Semana #SerCidadão · U.Porto",
       title: "Localização",
       subtitle: "Três polos, diversas faculdades, locais da comunidade",
     },
@@ -346,12 +346,12 @@ export const pt: Dictionary = {
 
   organization: {
     meta: {
-      title: "Organização — Semana Solidária U.Porto",
+      title: "Organização — Semana #SerCidadão",
       description:
-        "ReVIReS — Rede de Voluntariado, Inclusão e Responsabilidade Social da Universidade do Porto. Quem organiza a Semana Solidária 2026.",
+        "ReVIReS — Rede de Voluntariado, Inclusão e Responsabilidade Social da Universidade do Porto. Quem organiza a Semana #SerCidadão 2026.",
     },
     hero: {
-      chip: "Semana Solidária · U.Porto",
+      chip: "Semana #SerCidadão · U.Porto",
       title: "Organização",
       subtitle:
         "ReVIReS — Rede de Voluntariado, Inclusão e Responsabilidade Social da U.Porto",
@@ -387,30 +387,30 @@ export const pt: Dictionary = {
     social: {
       eyebrow: "Partilhe nas redes sociais",
       title: "#VoluntariadoUPorto",
-      body: "Junte-se ao movimento. Partilhe a sua experiência e inspire outros a fazer parte da Semana Solidária.",
+      body: "Junte-se ao movimento. Partilhe a sua experiência e inspire outros a fazer parte da Semana #SerCidadão.",
       shareLabel: "Partilhar",
       shareOn: "Partilhar no",
       copyLabel: "Copiar ligação",
       copiedLabel: "Ligação copiada!",
-      shareText: "Participe na Semana Solidária U.Porto, de 21 a 26 de setembro de 2026. #VoluntariadoUPorto",
+      shareText: "Participe na Semana #SerCidadão, de 21 a 26 de setembro de 2026. #VoluntariadoUPorto",
     },
   },
 
   privacy: {
     meta: {
-      title: "Privacidade — Semana Solidária U.Porto",
-      description: "Aviso de privacidade da Semana Solidária da Universidade do Porto.",
+      title: "Privacidade — Semana #SerCidadão",
+      description: "Aviso de privacidade da Semana #SerCidadão da Universidade do Porto.",
     },
     hero: {
-      chip: "Semana Solidária · U.Porto",
+      chip: "Semana #SerCidadão · U.Porto",
       title: "Privacidade",
-      subtitle: "Aviso de privacidade da Semana Solidária U.Porto",
+      subtitle: "Aviso de privacidade da Semana #SerCidadão",
     },
     title: "Aviso de privacidade",
     sections: [
       {
         heading: "Captação de imagem",
-        body: "Durante a Semana Solidária, poderão ser captadas fotografias e vídeos para fins de divulgação institucional pela U.Porto e entidades parceiras. A participação nas atividades implica o consentimento para a utilização dessas imagens em canais oficiais.",
+        body: "Durante a Semana #SerCidadão, poderão ser captadas fotografias e vídeos para fins de divulgação institucional pela U.Porto e entidades parceiras. A participação nas atividades implica o consentimento para a utilização dessas imagens em canais oficiais.",
       },
       {
         heading: "Dados pessoais",
@@ -426,12 +426,12 @@ export const pt: Dictionary = {
 
   volunteeringDay: {
     meta: {
-      title: "Dia Internacional do Voluntariado — Semana Solidária U.Porto",
+      title: "Dia Internacional do Voluntariado — Semana #SerCidadão",
       description:
         "Dia Internacional do Voluntariado da Universidade do Porto. 4 e 5 de dezembro de 2026. Concurso de fotografia, prémio do voluntariado e mesa-redonda.",
     },
     hero: {
-      chip: "Semana Solidária · U.Porto",
+      chip: "Semana #SerCidadão · U.Porto",
       title: "Dia Internacional do Voluntariado",
       subtitle: "4 e 5 de dezembro de 2026",
     },
@@ -485,16 +485,16 @@ export const pt: Dictionary = {
       notice: "Detalhes em atualização.",
     },
     cta: {
-      eyebrow: "Semana Solidária · U.Porto",
+      eyebrow: "Semana #SerCidadão · U.Porto",
       title: "Descubra o programa completo",
-      body: "Esta celebração faz parte da Semana Solidária U.Porto, de 21 a 26 de setembro de 2026.",
+      body: "Esta celebração faz parte da Semana #SerCidadão, de 21 a 26 de setembro de 2026.",
       button: "Ver Programa Completo",
     },
   },
 
   notFound: {
     meta: {
-      title: "Página não encontrada — Semana Solidária U.Porto",
+      title: "Página não encontrada — Semana #SerCidadão",
       description: "A página que procura não foi encontrada.",
     },
     code: "404",

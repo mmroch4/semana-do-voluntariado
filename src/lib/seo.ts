@@ -21,7 +21,7 @@ const ogImage = {
   url: new URL("/og", SITE_URL).toString(),
   width: 1200,
   height: 630,
-  alt: "Semana Solidária U.Porto — 21 a 26 de setembro de 2026",
+  alt: "Semana #SerCidadão — 21 a 26 de setembro de 2026",
 };
 
 /** Default site description per locale, used by the root layouts. */
