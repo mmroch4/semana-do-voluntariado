@@ -156,6 +156,21 @@ export interface OrganizationContent {
   social: SocialCallout;
 }
 
+/** One question/answer pair in the FAQ accordion. */
+export interface FaqItem {
+  question: string;
+  /** Placeholder copy until organizers confirm the real answer. */
+  answer: string;
+}
+
+export interface FaqContent {
+  meta: Meta;
+  hero: { chip: string; title: string; subtitle: string };
+  title: string;
+  items: FaqItem[];
+  notice: string;
+}
+
 export interface PrivacyContent {
   meta: Meta;
   hero: { chip: string; title: string; subtitle: string };
@@ -191,6 +206,7 @@ export interface Dictionary {
   program: ProgramContent;
   location: LocationContent;
   organization: OrganizationContent;
+  faq: FaqContent;
   privacy: PrivacyContent;
   volunteeringDay: VolunteeringDayContent;
   notFound: NotFoundContent;

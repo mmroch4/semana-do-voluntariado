@@ -12,6 +12,7 @@ export type PageKey =
   | "location"
   | "organization"
   | "volunteeringDay"
+  | "faq"
   | "privacy";
 
 /** Localized URL for every page. PT lives at the root, EN under `/en`. */
@@ -22,6 +23,7 @@ export const routes: Record<Locale, Record<PageKey, string>> = {
     location: "/localizacao",
     organization: "/organizacao",
     volunteeringDay: "/dia-voluntariado",
+    faq: "/faq",
     privacy: "/privacidade",
   },
   en: {
@@ -30,6 +32,7 @@ export const routes: Record<Locale, Record<PageKey, string>> = {
     location: "/en/location",
     organization: "/en/organization",
     volunteeringDay: "/en/volunteering-day",
+    faq: "/en/faq",
     privacy: "/en/privacy",
   },
 };
@@ -40,6 +43,7 @@ export const primaryNav: PageKey[] = [
   "location",
   "organization",
   "volunteeringDay",
+  "faq",
 ];
 
 /** Pages shown in the footer navigation, in order. */
@@ -47,6 +51,7 @@ export const footerNav: PageKey[] = [
   "program",
   "location",
   "organization",
+  "faq",
   "privacy",
 ];
 

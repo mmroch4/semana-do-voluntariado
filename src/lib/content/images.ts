@@ -103,6 +103,10 @@ export const images = {
   privacy: {
     hero: `${base}/generated-1775731279296.png`,
   },
+  faq: {
+    /* Stand-in hero (reuses a home-strip image) until a dedicated one exists. */
+    hero: `${base}/generated-1775681789275.png`,
+  },
   volunteeringDay: {
     hero: `${base}/generated-1775740445375.png`,
     contest: [

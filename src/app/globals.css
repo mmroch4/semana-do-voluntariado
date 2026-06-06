@@ -94,7 +94,8 @@
 
   /* Consistent, always-visible focus ring across the whole site. */
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  summary:focus-visible {
     outline: 3px solid var(--color-focus-ring);
     outline-offset: 2px;
     border-radius: 2px;

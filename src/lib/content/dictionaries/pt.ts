@@ -20,6 +20,7 @@ export const pt: Dictionary = {
       location: "Localização",
       organization: "Organização",
       volunteeringDay: "Dia do Voluntariado",
+      faq: "FAQ",
       privacy: "Privacidade",
     },
     footer: {
@@ -423,6 +424,51 @@ export const pt: Dictionary = {
       },
     ],
     notice: "Aviso completo em atualização.",
+  },
+
+  faq: {
+    meta: {
+      title: "Perguntas Frequentes — Semana #SerCidadão",
+      description:
+        "Respostas às perguntas mais frequentes sobre a Semana #SerCidadão: participação, inscrições, certificados, duração das atividades e uso de imagem.",
+    },
+    hero: {
+      chip: "Semana #SerCidadão · U.Porto",
+      title: "Perguntas Frequentes",
+      subtitle: "Tudo o que precisa de saber para participar na Semana #SerCidadão",
+    },
+    title: "Perguntas frequentes",
+    items: [
+      {
+        question: "Quem pode participar?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "Há limites de idade? A participação é gratuita?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "Como posso ser voluntário na U.Porto?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "As atividades dão direito a certificado?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "Qual é a duração das atividades?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "Como faço a inscrição?",
+        answer: "Resposta em atualização.",
+      },
+      {
+        question: "Como são utilizadas as imagens e fotografias captadas durante o evento?",
+        answer: "Resposta em atualização.",
+      },
+    ],
+    notice: "Respostas em atualização — esta página será completada em breve.",
   },
 
   volunteeringDay: {

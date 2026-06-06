@@ -20,6 +20,7 @@ export const en: Dictionary = {
       location: "Location",
       organization: "Organisation",
       volunteeringDay: "Volunteering Day",
+      faq: "FAQ",
       privacy: "Privacy",
     },
     footer: {
@@ -414,6 +415,51 @@ export const en: Dictionary = {
       },
     ],
     notice: "Full notice being updated.",
+  },
+
+  faq: {
+    meta: {
+      title: "Frequently Asked Questions — Semana #SerCidadão",
+      description:
+        "Answers to the most frequent questions about the Semana #SerCidadão: participation, registration, certificates, activity duration and image use.",
+    },
+    hero: {
+      chip: "Semana #SerCidadão · U.Porto",
+      title: "Frequently Asked Questions",
+      subtitle: "Everything you need to know to take part in the Semana #SerCidadão",
+    },
+    title: "Frequently asked questions",
+    items: [
+      {
+        question: "Who can take part?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "Are there age limits? Is participation free?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "How can I become a volunteer at U.Porto?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "Do the activities award a certificate?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "How long do the activities last?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "How do I register?",
+        answer: "Answer being updated.",
+      },
+      {
+        question: "How are images and photographs taken during the event used?",
+        answer: "Answer being updated.",
+      },
+    ],
+    notice: "Answers being updated — this page will be completed soon.",
   },
 
   volunteeringDay: {
