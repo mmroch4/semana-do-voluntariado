@@ -42,6 +42,21 @@
   --color-focus-ring-dark: #6b3a2a;
   --color-overlay-hero: rgba(61, 31, 21, 0.55);
 
+  /* color — activity categories (program schedule, filters, map pins).
+     Earthy hues tuned to the brown/gold base; every `-soft` tint is the
+     light card/chip surface for its solid. Solids hold ≥4.5:1 against
+     cream text, and the colored text holds ≥4.5:1 on its own tint. */
+  --color-cat-conference: #9c4226;
+  --color-cat-conference-soft: #f1ddd5;
+  --color-cat-volunteering: #55702d;
+  --color-cat-volunteering-soft: #e6ead2;
+  --color-cat-workshop: #8a6210;
+  --color-cat-workshop-soft: #f0e6cc;
+  --color-cat-sport: #19686d;
+  --color-cat-sport-soft: #d9e7e4;
+  --color-cat-culture: #7b4173;
+  --color-cat-culture-soft: #ecdeea;
+
   /* typography — the leading `var()` is injected by next/font (see
      `src/lib/fonts.ts`); the rest is the fallback chain used until it loads. */
   --font-body: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -168,8 +183,47 @@
     fill: var(--color-brown);
   }
 
+  /* Pins inherit their activity's category color (brown above is the
+     fallback for an unknown category). */
+  .program-map .program-pin--conference .program-pin-body {
+    fill: var(--color-cat-conference);
+  }
+
+  .program-map .program-pin--volunteering .program-pin-body {
+    fill: var(--color-cat-volunteering);
+  }
+
+  .program-map .program-pin--workshop .program-pin-body {
+    fill: var(--color-cat-workshop);
+  }
+
+  .program-map .program-pin--sport .program-pin-body {
+    fill: var(--color-cat-sport);
+  }
+
+  .program-map .program-pin--culture .program-pin-body {
+    fill: var(--color-cat-culture);
+  }
+
   .program-map .program-pin-dot {
     fill: var(--color-surface-warm);
+  }
+
+  /* Soft entrance when a day panel becomes visible (toggling `hidden`
+     restarts the animation). Neutralized by the global reduced-motion rule. */
+  @keyframes program-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .program-panel-enter {
+    animation: program-fade-up 0.3s ease both;
   }
 
   /* Keyboard-focused markers get the same always-visible ring as the rest of

@@ -1,5 +1,7 @@
+import { cn } from "@/lib/cn";
 import type { CategoryKey, DayNumber } from "@/lib/content/activities";
-import { Chip } from "@/components/ui/Chip";
+import { categoryStyles } from "./categoryStyles";
+import { CategoryIcon, ClockIcon, MapPinIcon, UsersIcon } from "./icons";
 import type { ScheduleActivity, ScheduleDay } from "./types";
 
 /** Formats "10:00" / "10:00–13:00" for display. */
@@ -10,8 +12,9 @@ function timeRange(a: ScheduleActivity): string {
 /**
  * The six day tabpanels. All panels are server-rendered (full week present in
  * the HTML for crawlers and no-JS visitors); only the selected one is shown,
- * the rest are `hidden`. Visual structure follows `ui/Timeline.tsx`, extended
- * with the venue line, capacity and a category chip per activity.
+ * the rest are `hidden`. Each activity is a card accented with its category
+ * color — icon circle, left border and badge — with an icon-led meta line
+ * (venue, capacity) instead of label text.
  */
 export function DayTimeline({
   days,
@@ -41,43 +44,75 @@ export function DayTimeline({
             aria-labelledby={`program-day-tab-${d.day}`}
             tabIndex={0}
             hidden={d.day !== selected}
-            className="mt-8"
+            className="program-panel-enter mt-8"
           >
             <h3 className="sr-only">{d.tab.long}</h3>
             {visible.length === 0 ? (
-              <p className="text-[0.9375rem] italic text-text-secondary">{emptyState}</p>
+              <div className="rounded-md border-2 border-dashed border-border bg-surface/60 px-6 py-10 text-center">
+                <p className="text-[0.9375rem] italic text-text-secondary">{emptyState}</p>
+              </div>
             ) : (
-              <ol className="flex flex-col gap-6 md:gap-8">
-                {visible.map((a) => (
-                  <li key={a.id} className="flex flex-col gap-1 md:flex-row md:items-start md:gap-4">
-                    <div className="flex items-center gap-2 md:flex-shrink-0">
-                      <span className="inline-flex items-center justify-center md:h-6 md:w-5">
-                        <span className="block h-2 w-2 shrink-0 rounded-full bg-text-accent" aria-hidden="true" />
-                      </span>
-                      <time
-                        dateTime={a.datetime}
-                        className="text-sm font-bold leading-tight tabular-nums text-text-primary md:order-first md:w-28 md:text-right md:text-base"
+              <ol className="flex flex-col gap-3 md:gap-4">
+                {visible.map((a) => {
+                  const style = categoryStyles[a.category];
+                  return (
+                    <li
+                      key={a.id}
+                      className={cn(
+                        "flex gap-4 rounded-md border-l-4 bg-surface p-4 shadow-card md:p-5",
+                        style.border,
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          "mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full md:h-11 md:w-11",
+                          style.soft,
+                          style.text,
+                        )}
+                        aria-hidden="true"
                       >
-                        {timeRange(a)}
-                      </time>
-                    </div>
+                        <CategoryIcon category={a.category} className="h-5 w-5" />
+                      </span>
 
-                    <div className="flex flex-col gap-1 md:flex-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h4 className="text-[1.125rem] font-medium leading-tight text-text-primary md:text-[1.25rem]">
+                      <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                          <time
+                            dateTime={a.datetime}
+                            className="inline-flex items-center gap-1.5 text-sm font-bold leading-none tabular-nums text-text-primary"
+                          >
+                            <ClockIcon className="h-3.5 w-3.5 text-text-secondary" />
+                            {timeRange(a)}
+                          </time>
+                          <span
+                            className={cn(
+                              "rounded-pill px-2.5 py-1 text-[0.625rem] font-bold uppercase leading-none tracking-[0.15em]",
+                              style.solid,
+                            )}
+                          >
+                            {a.categoryLabel}
+                          </span>
+                        </div>
+
+                        <h4 className="text-[1.125rem] font-semibold leading-tight text-text-primary md:text-[1.25rem]">
                           {a.title}
                         </h4>
-                        <Chip variant="solid">{a.categoryLabel}</Chip>
+                        <p className="text-[0.8125rem] text-text-secondary md:text-sm">{a.description}</p>
+
+                        <p className="mt-0.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.8125rem] text-text-secondary md:text-sm">
+                          <span className="inline-flex items-center gap-1.5">
+                            <MapPinIcon className={cn("h-4 w-4 shrink-0", style.text)} />
+                            {a.venueLabel}
+                          </span>
+                          <span className="inline-flex items-center gap-1.5">
+                            <UsersIcon className={cn("h-4 w-4 shrink-0", style.text)} />
+                            <span aria-hidden="true">{a.capacity}</span>
+                            <span className="sr-only">{capacityLabel.replace("{n}", String(a.capacity))}</span>
+                          </span>
+                        </p>
                       </div>
-                      <p className="text-[0.8125rem] text-text-secondary md:text-sm">{a.description}</p>
-                      <p className="text-[0.8125rem] font-medium text-text-secondary md:text-sm">
-                        {a.venueLabel}
-                        <span aria-hidden="true"> · </span>
-                        {capacityLabel.replace("{n}", String(a.capacity))}
-                      </p>
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ol>
             )}
           </div>

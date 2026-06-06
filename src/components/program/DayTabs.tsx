@@ -4,10 +4,11 @@ import type { DayNumber } from "@/lib/content/activities";
 import type { ScheduleDay } from "./types";
 
 /**
- * WAI-ARIA tablist for the six event days. Roving tabindex with automatic
- * activation: Arrow keys move and select (wrapping), Home/End jump to the
- * first/last day. Each tab controls the matching `program-day-panel-*`
- * tabpanel rendered by `DayTimeline`.
+ * WAI-ARIA tablist for the six event days, styled as a date-picker strip:
+ * weekday eyebrow over a large display-font day numeral. Roving tabindex
+ * with automatic activation: Arrow keys move and select (wrapping),
+ * Home/End jump to the first/last day. Each tab controls the matching
+ * `program-day-panel-*` tabpanel rendered by `DayTimeline`.
  */
 export function DayTabs({
   days,
@@ -35,9 +36,11 @@ export function DayTabs({
   }
 
   return (
-    <div role="tablist" aria-label={label} className="flex flex-wrap gap-2">
+    <div role="tablist" aria-label={label} className="grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3">
       {days.map((d, i) => {
         const isSelected = d.day === selected;
+        // "Seg 21" / "Mon 21" → weekday eyebrow + display numeral.
+        const [weekday, dayNumber] = d.tab.short.split(" ");
         return (
           <button
             key={d.day}
@@ -53,13 +56,28 @@ export function DayTabs({
             onClick={() => onSelect(d.day)}
             onKeyDown={(event) => handleKeyDown(event, i)}
             className={cn(
-              "rounded-pill px-4 py-2 text-sm font-semibold tabular-nums transition-colors",
+              "flex flex-col items-center gap-1 rounded-md border-b-4 px-2 py-3 transition-all duration-150",
               isSelected
-                ? "bg-brown text-text-inverse"
-                : "bg-surface-alt text-text-secondary hover:bg-border",
+                ? "border-gold bg-brown shadow-md"
+                : "border-transparent bg-surface shadow-card hover:-translate-y-0.5 hover:shadow-md",
             )}
           >
-            {d.tab.short}
+            <span
+              className={cn(
+                "text-[0.625rem] font-bold uppercase leading-none tracking-[0.2em]",
+                isSelected ? "text-text-inverse-soft" : "text-text-secondary",
+              )}
+            >
+              {weekday}
+            </span>
+            <span
+              className={cn(
+                "font-display text-[1.75rem] leading-none",
+                isSelected ? "text-gold" : "text-text-primary",
+              )}
+            >
+              {dayNumber}
+            </span>
           </button>
         );
       })}

@@ -4,20 +4,31 @@ import { useEffect } from "react";
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { CATEGORY_KEYS, type CategoryKey } from "@/lib/content/activities";
+import { categoryStyles } from "./categoryStyles";
 import type { ScheduleActivity } from "./types";
 
 /**
- * Custom brand pin. Leaflet's default marker PNGs resolve relative to its CSS
- * and break under bundlers, so we use a `divIcon` with an inline SVG instead —
- * colors come from the design tokens via `.program-pin` rules in globals.css.
+ * Custom pins, one per category color. Leaflet's default marker PNGs resolve
+ * relative to its CSS and break under bundlers, so we use a `divIcon` with an
+ * inline SVG instead — fills come from the design tokens via the
+ * `.program-pin--<category>` rules in globals.css.
  */
-const pinIcon = L.divIcon({
-  className: "program-pin",
-  html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36" aria-hidden="true"><path class="program-pin-body" d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.27 21.73 0 14 0Z"/><circle class="program-pin-dot" cx="14" cy="14" r="5.5"/></svg>',
-  iconSize: [28, 36],
-  iconAnchor: [14, 36],
-  popupAnchor: [0, -32],
-});
+const PIN_SVG =
+  '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36" aria-hidden="true"><path class="program-pin-body" d="M14 0C6.27 0 0 6.27 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.27 21.73 0 14 0Z"/><circle class="program-pin-dot" cx="14" cy="14" r="5.5"/></svg>';
+
+const pinIcons = Object.fromEntries(
+  CATEGORY_KEYS.map((category) => [
+    category,
+    L.divIcon({
+      className: `program-pin program-pin--${category}`,
+      html: PIN_SVG,
+      iconSize: [28, 36],
+      iconAnchor: [14, 36],
+      popupAnchor: [0, -32],
+    }),
+  ]),
+) as Record<CategoryKey, L.DivIcon>;
 
 /** Center of Porto; only shown until the first `fitBounds` runs. */
 const PORTO_CENTER: [number, number] = [41.1579, -8.6291];
@@ -71,7 +82,7 @@ export function LeafletMap({
         <Marker
           key={p.id}
           position={[p.lat, p.lng]}
-          icon={pinIcon}
+          icon={pinIcons[p.category]}
           title={p.title}
           alt={`${p.title} — ${p.venueName}`}
         >
@@ -80,7 +91,9 @@ export function LeafletMap({
             <p>
               <time dateTime={p.datetime}>{p.endTime ? `${p.time}–${p.endTime}` : p.time}</time>
               {" · "}
-              {p.categoryLabel}
+              <span className={`font-bold uppercase tracking-[0.1em] text-[0.6875rem] ${categoryStyles[p.category].text}`}>
+                {p.categoryLabel}
+              </span>
             </p>
             <p>{p.venueLabel}</p>
             <p>{capacityLabel.replace("{n}", String(p.capacity))}</p>
