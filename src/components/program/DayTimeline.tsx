@@ -59,7 +59,7 @@ export function DayTimeline({
                     <li
                       key={a.id}
                       className={cn(
-                        "flex gap-4 rounded-md border-l-4 bg-surface p-4 shadow-card md:p-5",
+                        "flex gap-4 rounded-md rounded-l-none border-l-4 bg-surface p-4 shadow-card md:p-5",
                         style.border,
                       )}
                     >

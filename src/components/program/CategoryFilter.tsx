@@ -4,7 +4,7 @@ import { categoryStyles } from "./categoryStyles";
 import { CheckIcon } from "./icons";
 
 const chipBase =
-  "inline-flex items-center gap-1.5 rounded-pill border px-3.5 py-2 text-[0.6875rem] font-bold uppercase leading-none tracking-[0.15em] transition-colors";
+  "cursor-pointer inline-flex items-center gap-1.5 rounded-pill border px-3.5 py-2 text-[0.6875rem] font-bold uppercase leading-none tracking-[0.15em] transition-colors";
 
 /**
  * Toggle-chip filter for activity categories, each chip in its category

@@ -56,9 +56,9 @@ export function DayTabs({
             onClick={() => onSelect(d.day)}
             onKeyDown={(event) => handleKeyDown(event, i)}
             className={cn(
-              "flex flex-col items-center gap-1 rounded-md border-b-4 px-2 py-3 transition-all duration-150",
+              "flex flex-col items-center gap-1 rounded-md px-2 py-3 transition-all duration-150 cursor-pointer",
               isSelected
-                ? "border-gold bg-brown shadow-md"
+                ? "bg-brown shadow-md"
                 : "border-transparent bg-surface shadow-card hover:-translate-y-0.5 hover:shadow-md",
             )}
           >
@@ -73,7 +73,7 @@ export function DayTabs({
             <span
               className={cn(
                 "font-display text-[1.75rem] leading-none",
-                isSelected ? "text-gold" : "text-text-primary",
+                isSelected ? "text-white" : "text-text-primary",
               )}
             >
               {dayNumber}
