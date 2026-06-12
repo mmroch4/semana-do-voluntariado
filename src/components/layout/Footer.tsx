@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 import type { Chrome } from "@/lib/content/types";
 import type { Locale } from "@/lib/i18n/config";
 import { footerNav, routes } from "@/lib/i18n/routes";
@@ -14,9 +15,12 @@ export function Footer({ locale, chrome }: { locale: Locale; chrome: Chrome }) {
       <div className="mx-auto flex max-w-[var(--container-max)] flex-col gap-12">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
           <div className="flex flex-col gap-3.5 md:flex-1">
-            <p className="m-0 font-display text-[1.25rem] font-medium text-text-inverse">
-              {f.brandName}
-            </p>
+            <div className="flex items-center gap-3">
+              <Logo alt="" className="h-12 w-auto" />
+              <p className="m-0 font-display text-[1.25rem] font-medium text-text-inverse">
+                {f.brandName}
+              </p>
+            </div>
             <p className="m-0 text-[0.8125rem] font-medium tracking-[0.3px] text-surface-alt">
               {f.dates}
             </p>

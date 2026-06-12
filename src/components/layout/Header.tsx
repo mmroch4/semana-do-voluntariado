@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/ui/Logo";
 import type { Chrome } from "@/lib/content/types";
 import { htmlLang, locales, localeShort, type Locale } from "@/lib/i18n/config";
 import { primaryNav, routes, type PageKey } from "@/lib/i18n/routes";
@@ -48,16 +49,19 @@ export function Header({
   }, [open]);
 
   const navLinkBase =
-    "flex h-14 items-center border-b border-border-subtle px-2 text-[1.125rem] font-medium text-text-primary no-underline hover:text-text-accent md:h-auto md:border-0 md:p-0 md:text-[0.875rem] md:font-normal md:tracking-[0.5px] md:text-text-secondary md:hover:text-text-accent";
+    "flex h-14 items-center border-b border-border-subtle px-2 text-[1.125rem] font-medium text-text-primary no-underline hover:text-text-accent lg:h-auto lg:border-0 lg:p-0 lg:text-[0.875rem] lg:font-normal lg:tracking-[0.5px] lg:text-text-secondary lg:hover:text-text-accent";
 
   return (
     <header className="sticky top-0 z-[100] border-b border-border-subtle bg-surface-warm">
       <Container className="flex h-18 items-center justify-between md:h-21">
         <Link
           href={routes[locale].home}
-          className="font-display text-[1.125rem] font-medium leading-none tracking-[-0.3px] text-text-primary no-underline md:text-[1.375rem]"
+          className="inline-flex items-center gap-2.5 no-underline"
         >
-          {chrome.header.logo}
+          <Logo alt="" className="h-10 w-auto md:h-11" />
+          <span className="font-display text-[1.125rem] font-medium leading-none tracking-[-0.3px] text-text-primary md:text-[1.375rem]">
+            {chrome.header.logo}
+          </span>
         </Link>
 
         <button
@@ -67,7 +71,7 @@ export function Header({
           aria-controls="main-nav"
           aria-label={open ? chrome.header.closeMenu : chrome.header.openMenu}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-sm text-text-primary md:hidden"
+          className="inline-flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-sm text-text-primary lg:hidden"
         >
           {[0, 1, 2].map((i) => (
             <span key={i} className="block h-0.5 w-5 rounded-[1px] bg-current" aria-hidden="true" />
@@ -79,13 +83,16 @@ export function Header({
           aria-label={chrome.header.logo}
           className={cn(
             "fixed inset-y-0 right-0 z-[200] flex w-[min(100vw,22.5rem)] flex-col bg-surface-warm p-6 transition-transform duration-200 ease-out",
-            "md:static md:z-auto md:w-auto md:translate-x-0 md:flex-row md:items-center md:bg-transparent md:p-0 md:!visible",
+            "lg:static lg:z-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:bg-transparent lg:p-0 lg:!visible",
             open ? "visible translate-x-0" : "invisible translate-x-full",
           )}
         >
-          <div className="flex h-9 items-center justify-between md:hidden">
-            <span className="font-display text-[1.125rem] font-medium tracking-[-0.3px] text-text-primary">
-              {chrome.header.logo}
+          <div className="flex h-9 items-center justify-between lg:hidden">
+            <span className="inline-flex items-center gap-2.5">
+              <Logo alt="" className="h-8 w-auto" />
+              <span className="font-display text-[1.125rem] font-medium tracking-[-0.3px] text-text-primary">
+                {chrome.header.logo}
+              </span>
             </span>
             <button
               type="button"
@@ -107,7 +114,7 @@ export function Header({
             </button>
           </div>
 
-          <ul className="mt-12 flex flex-col md:mt-0 md:flex-row md:items-center md:gap-6 lg:gap-9">
+          <ul className="mt-12 flex flex-col lg:mt-0 lg:flex-row lg:items-center lg:gap-6 xl:gap-9">
             {primaryNav.map((page, index) => {
               const isActive = page === activePage;
               return (
@@ -119,7 +126,7 @@ export function Header({
                     onClick={() => setOpen(false)}
                     className={cn(
                       navLinkBase,
-                      isActive && "md:font-semibold md:!text-text-accent",
+                      isActive && "lg:font-semibold lg:!text-text-accent",
                     )}
                   >
                     {chrome.nav[page]}
@@ -127,14 +134,14 @@ export function Header({
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      className="absolute -bottom-2 left-0 right-0 hidden h-0.5 rounded-[1px] bg-text-accent md:block"
+                      className="absolute -bottom-2 left-0 right-0 hidden h-0.5 rounded-[1px] bg-text-accent lg:block"
                     />
                   )}
                 </li>
               );
             })}
 
-            <li className="mt-4 md:ml-2 md:mt-0">
+            <li className="mt-4 lg:ml-2 lg:mt-0">
               {/* Two equal-sized square badges, PT then EN. The current locale
                   is distinguished only by its filled background; the other is a
                   plain anchor — a full document load is what we want when
